@@ -1,0 +1,36 @@
+{
+    "model" : {
+        "backend":              "MobileNet",
+        "input_size":           224,
+        "anchors":              [0.74, 1.53, 1.04, 3.26, 1.71, 5.38, 2.28, 1.71, 3.70, 5.13],
+        "max_box_per_image":    30,        
+        "labels":               ["plastic", "metal", "glass", "paper"]
+    },
+
+    "train": {
+        "train_image_folder":   "/home/jovyan/keras-yolo2/train_images/",
+        "train_annot_folder":   "/home/jovyan/keras-yolo2/train_annotations/",     
+          
+        "train_times":          50,
+        "pretrained_weights":   "",
+        "batch_size":           16,
+        "learning_rate":        1e-4,
+        "nb_epochs":            5,
+        "warmup_epochs":        3,
+
+        "object_scale":         5.0 ,
+        "no_object_scale":      1.0,
+        "coord_scale":          1.0,
+        "class_scale":          1.0,
+
+        "saved_weights_name":   "trash_sort_2.h5",
+        "debug":                true
+    },
+
+    "valid": {
+        "valid_image_folder":   "",
+        "valid_annot_folder":   "",
+
+        "valid_times":          1
+    }
+}
